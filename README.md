@@ -1,8 +1,8 @@
 # Marketing-Mixed-Modelling (MMM)
 
-The following case-study was part of the [HAMS Data Science Challenge](https://github.com/haensel-ams/recruitment_challenge/tree/master/DataScience_202209). The task was to:
+The following case-study was part of the [HAMS Data Science Challenge](https://github.com/haensel-ams/recruitment_challenge/tree/master/DataScience_202209). The challenge was set in the context of performance marketing and the tasks were to:
 
-* build a Bayesian MMM with the latest PyMC package
+* build a Bayesian MMM with the latest [PyMC package](https://www.pymc.io/)
 * test it on the given dataset
 * interpret the insights from the model
 * answer the following questions:
@@ -14,50 +14,12 @@ The following case-study was part of the [HAMS Data Science Challenge](https://g
   * What are your main insights in terms of channel performance/ effects?
   * (Bonus) Can you derive ROI (return on investment) estimates per channel? What is the best channel in terms of ROI?
 
-## Task
-
-The challenge was 
-
-The challenge was set in the context of performance marketing and applying a bayesian mixed-media model (MMM) on our test dataset and interpret the insights from the model. We built the MMM with the latest PyMC package (https://www.pymc.io/).
-
-## Context
-
-We have a company X which runs an online shop. X advertises on seven different paid channels and has weekly costs in them. Marketing actions have usually not an immediate effect, ads and campaigns in one week influence usually sales in the coming weeks. Hence, the company is of course super interesting to understand how effective different channels are. 
-In terms of channels think of TV, radio, billboards, but also online advertisement such as Google Ads, Facebook Ads, etc. So different channel can be expected to target different audiences at different times, and hence will have very different effects on future sales.
-
-This is of course the perfect setting for an ambitious Data Scientist. ;-) Modelling the uncertainty and the delayed effects is of course key. We are working heavily with Bayesian models and would like here to test your understanding and approaches in this setting.
-
-### Some hints
-
-* You will need to model the spend carry over effect (adstock).
-* No need (for now) to overcomplicate the adstock shape effects with saturation or diminishing returns.
-* Seasonality & trend might be interesting to be included in your model.
-
-
 ## Dataset MMM_test_data.csv
 
 * start_of_week: first day of the week	
 * revenue: revenue generated in this week from sales	
 * spend_channel_1..7: marketing cost spend in this week in channel 1..7	
 
+# Summary
 
-## Questions
-* How do you model spend carry over?
-* Explain your choice of prior inputs to the model?
-* How are your model results based on prior sampling vs. posterior sampling?
-* How good is your model performing? How you do measure it? 
-* What are your main insights in terms of channel performance/ effects?
-* (Bonus) Can you derive ROI (return on investment) estimates per channel? What is the best channel in terms of ROI?
-
-## Deliverable
-
-- the Jupyter notebook which runs the model and generates the results
-- (nice to have) a brief PDF report that answers the questions above
-- keep your results concise (maximum 3-4 pages)
-
-
-## Note: We don't expect you to build THE perfect analysis and report here.
-Our goal here is:
-* See how you approach such a problem
-* Get an idea of your skills
-
+We built a mixed-media-model to predict the impact of spends in 7 different marketing channels on our target variable, the revenue. We asssumed that the effect of marketing has a carryover effect, one with a delayed peak modelling using a delayed adstock function. Further, the response to the revenue of the spend does not increase linearly with increasing spend, but rather saturates at high spends, and can even start to show dimishing returns, something that we modelled using a logistic saturation curvature function. Finally, we used as control measurements, an underlying trend, seasonal variations, and exceptional events of peak revenue, that is unlikely to do with marketing spend. We inferred the parameters of this model using a Bayesian framework, where assuming certain prior distributions for these parameters and a Gaussian nature to the noise, we stochastically sampled over the parameter space using an MCMC algorithm.
