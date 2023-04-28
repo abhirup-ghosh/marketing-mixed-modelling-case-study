@@ -1,11 +1,24 @@
 # Marketing-Mixed-Modelling (MMM)
 
-The following case-study was part of the [HAMS Data Science Challenge](https://github.com/haensel-ams/recruitment_challenge/tree/master/DataScience_202209). The challenge involved building advanced probablistic data models to perform MMM and interpret their results. Details of the challenge are given below.
+The following case-study was part of the [HAMS Data Science Challenge](https://github.com/haensel-ams/recruitment_challenge/tree/master/DataScience_202209). The task was to:
+
+* build a Bayesian MMM with the latest PyMC package
+* test it on the given dataset
+* interpret the insights from the model
+* answer the following questions:
+
+  * How do you model spend carry over?
+  * Explain your choice of prior inputs to the model?
+  * How are your model results based on prior sampling vs. posterior sampling?
+  * How good is your model performing? How you do measure it?
+  * What are your main insights in terms of channel performance/ effects?
+  * (Bonus) Can you derive ROI (return on investment) estimates per channel? What is the best channel in terms of ROI?
 
 ## Task
 
-The challenge is set in the context of performance marketing and we want you to apply a bayesian mixed-media model (MMM) on our test dataset an interpret the insights from the model. 
-Build the MMM with the latest PyMC package (https://www.pymc.io/).
+The challenge was 
+
+The challenge was set in the context of performance marketing and applying a bayesian mixed-media model (MMM) on our test dataset and interpret the insights from the model. We built the MMM with the latest PyMC package (https://www.pymc.io/).
 
 ## Context
 
