@@ -1,7 +1,6 @@
-# Data Science Challenge
+# Marketing-Mixed-Modelling (MMM)
 
-Welcome to the HAMS Data Science Challenge! With this challenge we want to test your ability to build advanced probabilistic data models and to interpret their results.
-
+The following case-study was part of the [HAMS Data Science Challenge](https://github.com/haensel-ams/recruitment_challenge/tree/master/DataScience_202209). The challenge involved building advanced probablistic data models to perform MMM and interpret their results. Details of the challenge are given below.
 
 ## Task
 
